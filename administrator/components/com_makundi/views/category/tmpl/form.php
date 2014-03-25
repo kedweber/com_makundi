@@ -11,7 +11,7 @@
 
 <form action="" method="post" class="-koowa-form" data-toolbar=".toolbar-list">
     <div class="row-fluid">
-        <div class="span6">
+        <div class="span8">
             <fieldset class="form-horizontal">
                 <legend><?= @text('Details'); ?></legend>
                 <div class="control-group">
@@ -55,21 +55,33 @@
                         </div>
                     </div>
                 </div>
-            </fieldset>
+				<div class="control-group">
+					<label class="control-label"><?= @text('FIELDSET'); ?></label>
+					<?= @template('com://admin/cck.view.connection.listbox'); ?>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend><?= @text('FIELDS'); ?></legend>
+				<div id="fieldset"></div>
+			</fieldset>
         </div>
-        <div class="span6">
-            <fieldset>
-                <legend><?= @text('Description'); ?></legend>
-                    <?= @editor(array(
-                        'name' => 'description',
-                        'id' => 'description',
-                        'width' => '100%',
-                        'height' => '391',
-                        'cols' => '100',
-                        'rows' => '20',
-                        'buttons' => array('pagebreak')
-                    )); ?>
-            </fieldset>
-        </div>
+		<div class="span4">
+			<fieldset>
+				<legend><?= @text('DETAILS'); ?></legend>
+				<div class="control-group">
+					<label class="control-label"><?= @text('PUBLISH'); ?></label>
+					<div class="controls">
+						<?= @helper('select.booleanlist', array('name' => 'enabled', 'selected' => $category->enabled)); ?>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label"><?= @text('TRANSLATED'); ?></label>
+					<div class="controls">
+						<?= @helper('select.booleanlist', array('name' => 'translated', 'selected' => $category->translated)); ?>
+					</div>
+				</div>
+			</fieldset>
+		</div>
     </div>
 </form>

@@ -207,13 +207,21 @@ class ComMakundiDatabaseRowNode extends KDatabaseRowDefault
             return false;
         }
 
+		if($behavior = $this->getTable()->getBehavior('translatable')) {
+			$this->getTable()->getCommandChain()->dequeue($behavior);
+		}
+
         $query = $this->getTable()->getDatabase()->getQuery();
         $query->select('COUNT(*)')
             ->from('#__'.$this->_relation_table_name.' AS r')
             ->where('r.descendant_id', '=', (int) $descendant)
             ->where('r.ancestor_id', '=', (int) $ancestor);
 
-        return (bool) $this->getTable()->select($query, KDatabase::FETCH_FIELD);
+        $result = $this->getTable()->select($query, KDatabase::FETCH_FIELD);
+
+		$this->getTable()->getCommandChain()->enqueue($behavior);
+
+		return (bool) $result;
     }
 
     public function __get($property)

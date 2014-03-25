@@ -18,7 +18,7 @@ class ComMakundiDatabaseTableCategories extends ComMakundiDatabaseTableNodes
                 'identifiable',
                 'orderable',
                 'com://admin/taxonomy.database.behavior.relationable',
-//                'com://admin/translations.database.behavior.translatable',
+                'com://admin/translations.database.behavior.translatable',
             ),
             'filters' => array(
                 'description' => array('html')

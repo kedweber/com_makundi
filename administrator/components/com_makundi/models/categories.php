@@ -10,7 +10,9 @@ class ComMakundiModelCategories extends ComMakundiModelNodes
         parent::__construct($config);
 
         $this->_state
-            ->insert('enabled', 'int');
+            ->insert('type', 'word')
+            ->insert('enabled', 'int')
+		;
     }
 
     /**
@@ -26,8 +28,13 @@ class ComMakundiModelCategories extends ComMakundiModelNodes
             $query->where('tbl.title', 'LIKE', '%'.$state->search.'%');
         }
 
-        if (is_numeric($state->enabled)) {
-            $query->where('tbl.enabled','=', $state->enabled);
+		//TODO: Filter on array;
+        if ($state->type) {
+            $query->where('tbl.type','=', $state->type);
         }
+
+		if (is_numeric($state->enabled)) {
+			$query->where('tbl.enabled','=', $state->enabled);
+		}
     }
 }
