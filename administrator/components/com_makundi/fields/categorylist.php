@@ -18,16 +18,9 @@ class JFormFieldCategorylist extends JFormField {
         // Get all the content categories.
         //$categories = JHtml::_('category.options', 'com_content');
 
-        $categories = KService::get('com://admin/makundi.model.categories')->getList();
-
-        return JHtml::_(
-            'select.genericlist', $categories->getData(), 'jform[request]['. (string) $this->element->attributes()->name .']',
-            array(
-                'id' => 'jform_' . (string) $this->element->attributes()->name,
-                'list.attr' => 'class="inputbox" size="1"',
-                'list.select' => $this->value,
-                'list.translate' => false
-            ), 'id', 'title'
-        );
+        return KService::get('com://admin/makundi.template.helper.listbox')->categories(array(
+            'name' => 'jform[request]['. (string) $this->element->attributes()->name .']',
+            'selected' => $this->value
+        ));
     }
 }
