@@ -246,14 +246,30 @@ class ComMakundiDatabaseRowNode extends KDatabaseRowDefault
 
     public function getSlugPath()
     {
+		if($behavior = $this->getTable()->getBehavior('translatable')) {
+			$this->getTable()->getCommandChain()->dequeue($behavior);
+		}
+
+		$iso_code = substr(JFactory::getLanguage()->getTag(), 0, 2);
+
+		if($iso_code != 'en') {
+			$table = $iso_code.'_'.$this->_table_name;
+		} else {
+			$table = $this->_table_name;
+		}
+
         $query = $this->getTable()->getDatabase()->getQuery();
         $query->select('GROUP_CONCAT(c.slug SEPARATOR \'/\')')
             ->from('#__'.$this->_relation_table_name.' AS r')
-            ->join('left', $this->_table_name.' AS c', 'c.makundi_category_id = r.ancestor_id')
+            ->join('left', $table.' AS c', 'c.makundi_category_id = r.ancestor_id')
             ->where('r.descendant_id', '=', (int) $this->id)
             ->order('r.level', 'desc')
             ;
 
-        return $this->getTable()->select($query, KDatabase::FETCH_FIELD);
+		$result = $this->getTable()->select($query, KDatabase::FETCH_FIELD);
+
+		$this->getTable()->getCommandChain()->enqueue($behavior);
+
+		return $result;
     }
 }

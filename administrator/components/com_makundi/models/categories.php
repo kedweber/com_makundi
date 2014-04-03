@@ -11,6 +11,7 @@ class ComMakundiModelCategories extends ComMakundiModelNodes
 
         $this->_state
             ->insert('type', 'word')
+			->insert('featured', 'int')
             ->insert('enabled', 'int')
 		;
     }
@@ -24,17 +25,21 @@ class ComMakundiModelCategories extends ComMakundiModelNodes
 
         $state = $this->_state;
 
-        if ($state->search) {
-            $query->where('tbl.title', 'LIKE', '%'.$state->search.'%');
-        }
-
 		//TODO: Filter on array;
-        if ($state->type) {
+        if($state->type) {
             $query->where('tbl.type','=', $state->type);
         }
 
-		if (is_numeric($state->enabled)) {
+		if(is_numeric($state->enabled)) {
 			$query->where('tbl.enabled','=', $state->enabled);
+		}
+
+		if(is_numeric($state->featured)) {
+            $query->where('tbl.featured', '=', $state->featured);
+        }
+
+		if($state->search) {
+			$query->where('tbl.title', 'LIKE', '%'.$state->search.'%');
 		}
     }
 }
