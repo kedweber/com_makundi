@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Show category">
+		<message>
+			Display a category
+		</message>
+	</layout>
+	<fields name="request" addfieldpath="administrator/components/com_makundi/fields">
+		<fieldset name="request">
+			<field
+					name="id"
+					type="categorylist"
+					label="Category"
+					description="Select the category to display"
+					/>
+		</fieldset>
+	</fields>
+
+    <fields name="params">
+        <!-- Basic options. -->
+        <fieldset name="basic"
+                  label="COM_CONTENT_ATTRIBS_ARTICLE_SETTINGS_LABEL">
+            <field
+                    name="show_subcategories"
+                    type="radio"
+                    class="btn-group"
+                    description="JGLOBAL_SHOW_SUBCATEGORIES"
+                    label="JGLOBAL_SUBCATEGORIES_DESC_LABEL"
+                    default="0">
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                    name="columns"
+                    type="text"
+                    label="JGLOBAL_COLUMNS"
+                    description="JGLOBAL_COLUMNS_DESC" />
+            <field
+                    name="limit"
+                    type="text"
+                    label="JGLOBAL_LIMIT"
+                    description="JGLOBAL_LIMIT_DESC" />
+
+            <field
+                    name="show_description"
+                    type="radio"
+                    class="btn-group"
+                    description="JGLOBAL_SHOW_DESCRIPTION_DESC"
+                    label="JGLOBAL_SHOW_DESC_LABEL"
+                    default="0">
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                    name="show_articles"
+                    type="radio"
+                    class="btn-group"
+                    description="JGLOBAL_SHOW_ARTICLES_DESC"
+                    label="JGLOBAL_SHOW_ARTICLES_LABEL"
+                    default="1">
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+        </fieldset>
+    </fields>
+</metadata>
