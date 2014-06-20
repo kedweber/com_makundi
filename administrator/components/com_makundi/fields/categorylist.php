@@ -20,7 +20,8 @@ class JFormFieldCategorylist extends JFormField {
 
         return KService::get('com://admin/makundi.template.helper.listbox')->categories(array(
             'name' => $this->name,
-            'selected' => $this->value
+            'selected' => $this->value,
+            'indent'    => '- '
         ));
     }
 }
