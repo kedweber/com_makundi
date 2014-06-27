@@ -24,11 +24,10 @@ class ComMakundiViewCategoryHtml extends ComDefaultViewHtml
 
 		$layout = 'default';
 
-		if (KRequest::get('get.layout', 'string')) {
-			$layout = end(explode(':', KRequest::get('get.layout', 'string')));
-		}
+		$layout = end(explode(':', $menu->getActive()->query['_layout']));
 
-		$this->setLayout($layout);
+		$this->setLayout($layout ? $layout : 'default');
+//		$this->setLayout($layout);
 
 		$category =  $this->getModel()->getItem();
 
