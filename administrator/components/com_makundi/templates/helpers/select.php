@@ -15,23 +15,22 @@ class ComMakundiTemplateHelperSelect extends ComDefaultTemplateHelperSelect
             'attribs'	=> array(),
             'key'		=> 'id',
         ))->append(array(
-           'indent'    => '&nbsp;&nbsp;&nbsp;',
-            'value'		 => $config->name,
-            'selected'   => $config->{$config->name},
-            'identifier' => 'com://'.$this->getIdentifier()->application.'/'.$this->getIdentifier()->package.'.model.'.KInflector::pluralize($config->model)
-        ))->append(array(
-            'text'		=> $config->value,
-        ))->append(array(
-            'filter' 	=> array('sort' => $config->text),
-        ));
+                'indent'    => '&nbsp;&nbsp;&nbsp;',
+                'value'		 => $config->name,
+                'selected'   => $config->{$config->name},
+                'identifier' => 'com://'.$this->getIdentifier()->application.'/'.$this->getIdentifier()->package.'.model.'.KInflector::pluralize($config->model)
+            ))->append(array(
+                'text'		=> $config->value,
+            ))->append(array(
+                'filter' 	=> array('sort' => $config->text),
+            ));
 
         $options = array();
 
-        $options[] = $this->option(array('text' => '- '.JText::_('Select').' -', 'value' => null));
-
         $options[] = $this->option(array('text' => JText::_('Title'), 'value' => 'title'));
-        $options[] = $this->option(array('text' => JText::_('Creation Date'), 'value' => 'created_on'));
-        $options[] = $this->option(array('text' => JText::_('Publishing Date'), 'value' => 'publishing_date'));
+        $options[] = $this->option(array('text' => JText::_('Date Created'), 'value' => 'created_on'));
+        $options[] = $this->option(array('text' => JText::_('Date Published'), 'value' => 'publish_up'));
+        $options[] = $this->option(array('text' => JText::_('Date Modified'), 'value' => 'modified_on'));
         $options[] = $this->option(array('text' => JText::_('ID'), 'value' => 'id'));
 
         $config->options = $options;
@@ -52,19 +51,17 @@ class ComMakundiTemplateHelperSelect extends ComDefaultTemplateHelperSelect
             'attribs'	=> array(),
             'key'		=> 'id',
         ))->append(array(
-            'indent'    => '&nbsp;&nbsp;&nbsp;',
-            'value'		 => $config->name,
-            'selected'   => $config->{$config->name},
-            'identifier' => 'com://'.$this->getIdentifier()->application.'/'.$this->getIdentifier()->package.'.model.'.KInflector::pluralize($config->model)
-        ))->append(array(
-            'text'		=> $config->value,
-        ))->append(array(
-            'filter' 	=> array('sort' => $config->text),
-        ));
+                'indent'    => '&nbsp;&nbsp;&nbsp;',
+                'value'		 => $config->name,
+                'selected'   => $config->{$config->name},
+                'identifier' => 'com://'.$this->getIdentifier()->application.'/'.$this->getIdentifier()->package.'.model.'.KInflector::pluralize($config->model)
+            ))->append(array(
+                'text'		=> $config->value,
+            ))->append(array(
+                'filter' 	=> array('sort' => $config->text),
+            ));
 
         $options = array();
-
-        $options[] = $this->option(array('text' => '- '.JText::_('Select').' -', 'value' => null));
 
         $options[] = $this->option(array('text' => JText::_('Ascending'), 'value' => 'ASC'));
         $options[] = $this->option(array('text' => JText::_('Descending'), 'value' => 'DESC'));
