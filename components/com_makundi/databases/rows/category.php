@@ -16,7 +16,7 @@ class ComMakundiDatabaseRowCategory extends ComMakundiDatabaseRowNode
 	{
 		$result = $this->getService('com://site/articles.model.articles')->category_id($this->id)->featured(1)->getList()->top();
 
-		if ($result->isNew()) {
+		if ($result && $result->isNew()) {
 			$result = null;
 		}
 
