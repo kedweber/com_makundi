@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `#__makundi_categories` (
   `type` varchar(255) NOT NULL DEFAULT 'category',
   `layout` varchar(255) NOT NULL DEFAULT 'default',
   `fields` text,
-  `order_by` varchar(512) NOT NULL DEFAULT 'created_on',
+  `order_by` varchar(512) NOT NULL DEFAULT 'publish_up',
   `direction` varchar(512) NOT NULL DEFAULT 'DESC',
   `featured` tinyint(1) NOT NULL,
   `enabled` tinyint(1) NOT NULL DEFAULT '1',
