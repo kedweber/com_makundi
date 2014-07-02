@@ -14,7 +14,7 @@
 					description="Select the category to display"
 					/>
             <field
-                    name="layout"
+                    name="_layout"
                     type="componentlayout"
                     extension="com_makundi"
                     view="category"
