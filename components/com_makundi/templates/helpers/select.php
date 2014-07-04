@@ -27,10 +27,11 @@ class ComMakundiTemplateHelperSelect extends ComDefaultTemplateHelperSelect
 
         $options = array();
 
+        $options[] = $this->option(array('text' => '- '.JText::_('Select').' -', 'value' => null));
+
         $options[] = $this->option(array('text' => JText::_('Title'), 'value' => 'title'));
-        $options[] = $this->option(array('text' => JText::_('Date Created'), 'value' => 'created_on'));
-        $options[] = $this->option(array('text' => JText::_('Date Published'), 'value' => 'publish_up'));
-        $options[] = $this->option(array('text' => JText::_('Date Modified'), 'value' => 'modified_on'));
+        $options[] = $this->option(array('text' => JText::_('Creation Date'), 'value' => 'created_on'));
+        $options[] = $this->option(array('text' => JText::_('Publishing Date'), 'value' => 'publish_up'));
         $options[] = $this->option(array('text' => JText::_('ID'), 'value' => 'id'));
 
         $config->options = $options;
@@ -62,6 +63,8 @@ class ComMakundiTemplateHelperSelect extends ComDefaultTemplateHelperSelect
         ));
 
         $options = array();
+
+        $options[] = $this->option(array('text' => '- '.JText::_('Select').' -', 'value' => null));
 
         $options[] = $this->option(array('text' => JText::_('Ascending'), 'value' => 'ASC'));
         $options[] = $this->option(array('text' => JText::_('Descending'), 'value' => 'DESC'));
