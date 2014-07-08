@@ -13,14 +13,6 @@
 					label="Category"
 					description="Select the category to display"
 					/>
-            <field
-                    name="_layout"
-                    type="componentlayout"
-                    extension="com_makundi"
-                    view="category"
-                    label="JFIELD_ALT_LAYOUT"
-                    useglobal="true"
-                    description="JFIELD_ALT_COMPONENT_LAYOUT" />
 		</fieldset>
 	</fields>
 

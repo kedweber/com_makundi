@@ -22,14 +22,11 @@ class ComMakundiViewCategoryHtml extends ComDefaultViewHtml
 		$menu = JFactory::getApplication()->getMenu();
 		$lang = JFactory::getLanguage();
 
-		$layout = 'default';
-
-		$layout = end(explode(':', $menu->getActive()->query['_layout']));
-
-		$this->setLayout($layout ? $layout : 'default');
-//		$this->setLayout($layout);
-
 		$category =  $this->getModel()->getItem();
+
+		$category->layout = end(explode(':', $category->layout));
+
+		$this->setLayout($category->layout ? $category->layout : 'default');
 
 		header('X-Category-ID: '.$category->id);
 
@@ -46,7 +43,7 @@ class ComMakundiViewCategoryHtml extends ComDefaultViewHtml
 			$doc->setMetaData('Description', $category->meta_description);
 		}
 
-		if($menu->getActive() == $menu->getDefault($lang->getTag())) {
+		if($menu->getActive() == $menu->getDefault($lang->getTag()) || !$menu->getActive()) {
 			$pathway = JFactory::getApplication()->getPathway();
 
 			if(!JApplication::getInstance('site')->getMenu()->getItems('link', 'index.php?option=com_makundi&view=category&id='.$category->id, true)) {

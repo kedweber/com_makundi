@@ -14,9 +14,11 @@ class ComMakundiDatabaseRowCategory extends ComMakundiDatabaseRowNode
 
 	public function getFeatured()
 	{
-		$result = $this->getService('com://site/articles.model.articles')->category_id($this->id)->featured(1)->getList()->top();
+		$result = $this->getService('com://site/articles.model.articles')->category_id($this->id)->featured(1)->getList();
 
-		if ($result->isNew()) {
+		if($result->count() > 0) {
+			$result = $result->top();
+		} else {
 			$result = null;
 		}
 

@@ -33,14 +33,14 @@
             </th>
 			<? if($categories->isTranslatable()) : ?>
 				<th>
-					<?= @text('Translations') ?>
+					<?= @text('TRANSLATIONS') ?>
 				</th>
 			<? endif; ?>
 			<th>
 				<?= @text('Owner'); ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'created_on', 'title' => @text('Date'))); ?>
+				<?= @helper('grid.sort', array('column' => 'created_on', 'title' => @text('DATE'))); ?>
 			</th>
 			<th>
 				<?= @helper('grid.sort', array('column' => 'custom', 'title' => 'Ordering', 'direction' => 'asc')) ?>

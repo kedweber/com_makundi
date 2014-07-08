@@ -31,7 +31,7 @@ class ComMakundiTemplateHelperSelect extends ComDefaultTemplateHelperSelect
 
         $options[] = $this->option(array('text' => JText::_('Title'), 'value' => 'title'));
         $options[] = $this->option(array('text' => JText::_('Creation Date'), 'value' => 'created_on'));
-        $options[] = $this->option(array('text' => JText::_('Publishing Date'), 'value' => 'publishing_date'));
+        $options[] = $this->option(array('text' => JText::_('Publishing Date'), 'value' => 'publish_up'));
         $options[] = $this->option(array('text' => JText::_('ID'), 'value' => 'id'));
 
         $config->options = $options;
