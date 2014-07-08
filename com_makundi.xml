@@ -16,20 +16,15 @@
             <file driver="mysql" charset="utf8">install/install.sql</file>
         </sql>
     </install>
-    <uninstall>
-        <sql>
-            <file driver="mysql" charset="utf8">install/uninstall.sql</file>
-        </sql>
-    </uninstall>
 
     <administration>
-
         <files folder="administrator/components/com_makundi">
             <file>dispatcher.php</file>
             <file>makundi.php</file>
 
             <folder>commands</folder>
             <folder>databases</folder>
+            <folder>fields</folder>
             <folder>install</folder>
             <folder>language</folder>
             <folder>models</folder>
@@ -45,4 +40,22 @@
 
         <menu>COM_MAKUNDI</menu>
     </administration>
+
+    <files folder="components/com_makundi">
+        <file>dispatcher.php</file>
+        <file>makundi.php</file>
+        <file>router.php</file>
+
+        <folder>commands</folder>
+        <folder>controllers</folder>
+        <folder>databases</folder>
+        <folder>fields</folder>
+        <folder>forms</folder>
+        <folder>install</folder>
+        <folder>language</folder>
+        <folder>models</folder>
+        <folder>objects</folder>
+        <folder>templates</folder>
+        <folder>views</folder>
+    </files>
 </extension>
