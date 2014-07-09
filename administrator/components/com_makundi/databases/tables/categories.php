@@ -13,7 +13,7 @@ class ComMakundiDatabaseTableCategories extends ComMakundiDatabaseTableNodes
             'behaviors' => array(
                 'lockable',
                 'sluggable',
-				'com://admin/moyo.database.behavior.creatable',
+				'creatable',
                 'modifiable',
                 'identifiable',
                 'orderable',
