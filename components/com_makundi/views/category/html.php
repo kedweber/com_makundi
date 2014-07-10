@@ -85,6 +85,13 @@ class ComMakundiViewCategoryHtml extends ComDefaultViewHtml
 			'show_articles' => 1
 		));
 
+		// TODO: Set the limit default limit inside $category so we can make this more flexable.
+		$limit = $this->getModel()->getState()->limit;
+		if(!$limit) {
+			$limit = $params->limit;
+		} else {
+			$limit = 4;
+		}
 		$this->assign('params', $config);
         $this->assign('parent', $this->getModel()->getItem()->getParent());
 		$this->assign('descendants', $descendants);
