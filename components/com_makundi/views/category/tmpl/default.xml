@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="Show category">
+	<layout title="COM_MAKUNDI_CATEGORY_VIEW_DEFAULT_TITLE">
 		<message>
-			Display a category
+            <![CDATA[COM_MAKUNDI_CATEGORY_VIEW_DEFAULT_DESC]]>
 		</message>
 	</layout>
 	<fields name="request" addfieldpath="administrator/components/com_makundi/fields">
@@ -19,13 +19,13 @@
     <fields name="params">
         <!-- Basic options. -->
         <fieldset name="basic"
-                  label="COM_CONTENT_ATTRIBS_ARTICLE_SETTINGS_LABEL">
+                  label="COM_MAKUNDI_ATTRIBS_CATEGORY_SETTINGS_LABEL">
             <field
                     name="show_subcategories"
                     type="radio"
                     class="btn-group"
-                    description="JGLOBAL_SHOW_SUBCATEGORIES"
-                    label="JGLOBAL_SUBCATEGORIES_DESC_LABEL"
+                    label="COM_MAKUNDI_SUBCATEGORIES_LABEL"
+                    description="COM_MAKUNDI_SHOW_SUBCATEGORIES_DESC"
                     default="0">
                 <option value="1">JSHOW</option>
                 <option value="0">JHIDE</option>
@@ -33,20 +33,22 @@
             <field
                     name="columns"
                     type="text"
-                    label="JGLOBAL_COLUMNS"
-                    description="JGLOBAL_COLUMNS_DESC" />
+                    label="COM_MAKUNDI_COLUMNS_LABEL"
+                    description="COM_MAKUNDI_COLUMNS_DESC"
+                    default="4" />
             <field
                     name="limit"
                     type="text"
-                    label="JGLOBAL_LIMIT"
-                    description="JGLOBAL_LIMIT_DESC" />
+                    default="4"
+                    label="COM_MAKUNDI_LIMIT_LABEL"
+                    description="COM_MAKUNDI_LIMIT_DESC" />
 
             <field
                     name="show_description"
                     type="radio"
                     class="btn-group"
-                    description="JGLOBAL_SHOW_DESCRIPTION_DESC"
-                    label="JGLOBAL_SHOW_DESC_LABEL"
+                    label="COM_MAKUNDI_SHOW_DESC_LABEL"
+                    description="COM_MAKUNDI_SHOW_DESCRIPTION_DESC"
                     default="0">
                 <option value="1">JSHOW</option>
                 <option value="0">JHIDE</option>
@@ -55,8 +57,8 @@
                     name="show_articles"
                     type="radio"
                     class="btn-group"
-                    description="JGLOBAL_SHOW_ARTICLES_DESC"
-                    label="JGLOBAL_SHOW_ARTICLES_LABEL"
+                    label="COM_MAKUNDI_SHOW_ARTICLES_LABEL"
+                    description="COM_MAKUNDI_SHOW_ARTICLES_DESC"
                     default="1">
                 <option value="1">JSHOW</option>
                 <option value="0">JHIDE</option>

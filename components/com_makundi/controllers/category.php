@@ -36,14 +36,4 @@ class ComMakundiControllerCategory extends ComDefaultControllerDefault
 
 		parent::_initialize($config);
 	}
-
-	/**
-	 * @return array|KConfig
-	 */
-	public function getRequest()
-	{
-		$this->_request->limit = $this->_request->limit ? $this->_request->limit : 4;
-
-		return $this->_request;
-	}
 }
