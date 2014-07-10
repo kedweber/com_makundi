@@ -88,9 +88,9 @@ class ComMakundiViewCategoryHtml extends ComDefaultViewHtml
 		// TODO: Set the limit default limit inside $category so we can make this more flexable.
 		$limit = $this->getModel()->getState()->limit;
 		if(!$limit) {
-			$limit = $params->limit;
+			$this->getModel()->getState()->limit = $config->limit;
 		} else {
-			$limit = 4;
+			$this->getModel()->getState()->limit = 4;
 		}
 		$this->assign('params', $config);
         $this->assign('parent', $this->getModel()->getItem()->getParent());
