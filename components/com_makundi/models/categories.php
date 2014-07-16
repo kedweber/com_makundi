@@ -30,16 +30,12 @@ class ComMakundiModelCategories extends ComMakundiModelNodes
             $query->where('tbl.type','=', $state->type);
         }
 
-		if(is_numeric($state->enabled)) {
-			$query->where('tbl.enabled','=', $state->enabled);
-		}
-
 		if(is_numeric($state->featured)) {
             $query->where('tbl.featured', '=', $state->featured);
         }
 
-		if($state->search) {
-			$query->where('tbl.title', 'LIKE', '%'.$state->search.'%');
+		if(!$state->isUnique()) {
+			$query->where('tbl.enabled','=', 1);
 		}
     }
 }
