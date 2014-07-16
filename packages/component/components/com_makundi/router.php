@@ -24,7 +24,7 @@ class ComMakundiRouter
 				$category = KService::get('com://site/makundi.model.categories')->id($query['id'])->getItem();
 
 				$segments['slug'] = $category->slug;
-				$segments['parent_slug_path'] = $category->parent_slug_path;
+				$segments['parent_slug_path'] = $category->parent_slug_path ? $category->parent_slug_path : null;
 			}
 		}
 
