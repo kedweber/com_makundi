@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="1.6">
+    <name>Categories</name>
+    <author>Jasper van Rijbroek</author>
+    <creationDate>Juli 2014</creationDate>
+    <packagename>makundi</packagename>
+    <version>1.2.8</version>
+    <url>http://www.moyoweb.nl/</url>
+    <packager>Jasper van Rijbroek</packager>
+    <packagerurl>http://www.moyoweb.nl/</packagerurl>
+    <description>Makundi Package</description>
+    <files folder="packages">
+        <file type="component" id="makundi">component</file>
+    </files>
+</extension>
