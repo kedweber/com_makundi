@@ -29,6 +29,10 @@ class ComMakundiDatabaseRowCategory extends ComMakundiDatabaseRowNode
 			return $this->getSlugPath();
 		}
 
+		if($column == 'created_by_name') {
+			return JFactory::getUser($this->created_by)->name;
+		}
+
 		return parent::__get($column);
 	}
 }
