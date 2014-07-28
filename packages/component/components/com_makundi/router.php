@@ -19,7 +19,7 @@ class ComMakundiRouter
 	{
 		$segments	= array();
 
-		if($query['id'] && !$query['slug']) {
+		if(isset($query['id']) && !isset($query['slug'])) {
 			if($query['view'] == 'category') {
 				$category = KService::get('com://site/makundi.model.categories')->id($query['id'])->getItem();
 
