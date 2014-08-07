@@ -1,9 +1,9 @@
 {
-    "name": "moyo/categories",
+    "name": "cta/categories",
     "type": "joomlatools-installer",
     "description": "Makundi",
     "keywords": ["joomla", "categories"],
-    "homepage": "https://moyoweb.assembla.com/code/moyo-content/git-10/nodes",
+    "homepage": "https://github.com/cta-int/makundi",
     "authors": [
         {
             "name": "Dave Li",
