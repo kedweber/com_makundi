@@ -16,7 +16,8 @@ class ComMakundiTemplateHelperListbox extends ComMoyoTemplateHelperListbox
             'prompt'   => ' - Select a category - ',
             'required' => false,
             'attribs' => array('data-placeholder' => $this->translate('Select a category&hellip;'), 'class' => 'select2-listbox'),
-            'behaviors' => array('select2' => array('element' => '.select2-listbox'))
+            'behaviors' => array('select2' => array('element' => '.select2-listbox')),
+            'indent'    => '- '
         ));
 
         return $this->_treelistbox($config);
