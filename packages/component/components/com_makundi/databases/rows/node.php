@@ -115,6 +115,7 @@ class ComMakundiDatabaseRowNode extends KDatabaseRowDefault
 		if ($this->id) {
 			$query->join('inner', '#__'.$this->_relation_table_name.' AS r', $join_column.' = crumbs.descendant_id')
 				->where($where_column, 'IN', $this->id)
+                ->where('tbl.enabled', '=', 1)
 				->where('tbl.makundi_category_id', 'NOT IN', $this->id);
 		}
 
