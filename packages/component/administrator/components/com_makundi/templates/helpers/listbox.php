@@ -15,7 +15,11 @@ class ComMakundiTemplateHelperListbox extends ComMoyoTemplateHelperListbox
             'text'     => 'title',
             'prompt'   => ' - Select a category - ',
             'required' => false,
-            'attribs' => array('data-placeholder' => $this->translate('Select a category&hellip;'), 'class' => 'select2-listbox'),
+            'attribs' => array(
+                'data-placeholder' => $this->translate('Select a category&hellip;'),
+                'class' => 'select2-listbox',
+                'style' => 'font-size: 13px;'
+            ),
             'behaviors' => array('select2' => array('element' => '.select2-listbox')),
             'indent'    => '- '
         ));
