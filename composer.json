@@ -1,8 +1,8 @@
 {
     "name": "cta/categories",
     "type": "joomlatools-installer",
-    "description": "Makundi",
-    "keywords": ["joomla", "categories"],
+    "description": "Category manager",
+    "keywords": ["joomla", "nooku", "categories"],
     "homepage": "https://github.com/cta-int/makundi",
     "authors": [
         {
