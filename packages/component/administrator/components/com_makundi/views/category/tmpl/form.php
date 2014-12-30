@@ -94,6 +94,12 @@
 						<?= @helper('select.booleanlist', array('name' => 'translated', 'selected' => $category->translated)); ?>
 					</div>
 				</div>
+				<div class="control-group">
+					<label class="control-label"><?= @text('SHOW_PUBLISING_DATE'); ?></label>
+					<div class="controls">
+						<?= @helper('select.booleanlist', array('name' => 'show_date', 'selected' => $category->show_date)); ?>
+					</div>
+				</div>
 			</fieldset>
 		</div>
     </div>
