@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS `#__makundi_categories` (
   `featured` tinyint(1) NOT NULL,
   `enabled` tinyint(1) NOT NULL DEFAULT '1',
   `show_date` tinyint(1) NOT NULL DEFAULT '0',
+  `show_time_to_read` tinyint(1) NOT NULL DEFAULT '0',
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `locked_by` bigint(20) NOT NULL DEFAULT '0',
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',

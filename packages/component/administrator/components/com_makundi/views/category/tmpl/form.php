@@ -100,6 +100,12 @@
 						<?= @helper('select.booleanlist', array('name' => 'show_date', 'selected' => $category->show_date)); ?>
 					</div>
 				</div>
+				<div class="control-group">
+					<label class="control-label"><?= @text('SHOW_TIME_TO_READ'); ?></label>
+					<div class="controls">
+						<?= @helper('select.booleanlist', array('name' => 'show_time_to_read', 'selected' => $category->show_time_to_read)); ?>
+					</div>
+				</div>
 			</fieldset>
 		</div>
     </div>
