@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS `#__makundi_categories` (
   `created_by` bigint(20) NOT NULL DEFAULT '0',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `ordering` integer NOT NULL default '0',
   PRIMARY KEY (`makundi_category_id`),
   UNIQUE KEY `uuid` (`uuid`),
   UNIQUE KEY `slug` (`slug`)
